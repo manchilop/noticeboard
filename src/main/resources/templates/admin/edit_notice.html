@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Notice</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Edit Notice</h1>
+<form th:action="@{/admin/notices/{id}(id=${notice.id})}" method="post" enctype="multipart/form-data">
+  <div>
+    <label>Description:</label>
+    <input type="text" name="description" th:value="${notice.description}" />
+  </div>
+  <div>
+    <label>File:</label>
+    <input type="file" name="file" />
+  </div>
+  <div>
+    <button type="submit">Update</button>
+  </div>
+</form>
+</body>
+</html>

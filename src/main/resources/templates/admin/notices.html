@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Manage Notices</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Manage Notices</h1>
+<a th:href="@{/admin/notices/new}">Add New Notice</a>
+<ul>
+  <li th:each="notice : ${notices}">
+    <span th:text="${notice.description}"></span>
+    <a th:href="@{/admin/notices/edit/{id}(id=${notice.id})}">Edit</a>
+    <a th:href="@{/admin/notices/delete/{id}(id=${notice.id})}">Delete</a>
+  </li>
+</ul>
+</body>
+</html>
