@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Notices</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>Notices</h1>
+<ul>
+  <li th:each="notice : ${notices}">
+    <span th:text="${notice.description}"></span>
+    <a th:href="@{/download/{id}(id=${notice.id})}">Download</a>
+  </li>
+</ul>
+</body>
+</html>
